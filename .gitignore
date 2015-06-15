@@ -6,6 +6,9 @@
 html
 *.avi
 *.aux
+*.nav
+*.snm
+*.toc
 *.out
 *.gz
 *.bbl
