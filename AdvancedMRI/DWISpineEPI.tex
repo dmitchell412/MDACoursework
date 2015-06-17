@@ -89,22 +89,87 @@
 \subsection{2D Echo-Planar RF Pulse}
 
 \begin{frame}{2D Echo-Planar RF Pulse}
+\begin{columns}[T]
+	\begin{column}[T]{5cm}
+		\begin{itemize}
+			\item 2D echo-planar pulses provide control of slice thickness in two orthogonal directions independently by combining two RF pulses
+			\item The "slow" (blipped) and the "fast" axes gradients and RF pulses are designed to achieve desired excitation prfiles in each spatial direction
+		\end{itemize}
+	\end{column}
+	\begin{column}[T]{5cm}
+		\includegraphics[height=6cm]{SpineDWIfig1}
+	\end{column}
+\end{columns}
+\end{frame}
 
+\begin{frame}{2D Echo-Planar RF Pulse}
+\begin{columns}[T]
+	\begin{column}[T]{5cm}
+		\begin{itemize}
+			\item In this paper, the echo-planar RF pulse creates a $90^{\circ}$ flip angle over 4 mm $\times$ 4.5 cm slab
+			\item The two orthogonal directions are the slice-select (SS) direction and the slab-select direction (phase encode direction during imaging)
+		\end{itemize}
+	\end{column}
+	\begin{column}[T]{5cm}
+		\includegraphics[height=6cm]{SpineDWIfig1}
+	\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{2D Echo-Planar RF Pulse}
+\begin{columns}[T]
+	\begin{column}[T]{5cm}
+		\begin{itemize}
+			\item 2D RF pulse reduces PE direction FOV to 4.5 cm, and the pulse duration is 16.8 ms
+			\item The excitation profiles for fat and water are displaced in volume along the blipped (SS) direction
+		\end{itemize}
+	\end{column}
+	\begin{column}[T]{5cm}
+		\includegraphics[height=6cm]{SpineDWIfig1}
+	\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{2D Echo-Planar RF Pulse}
+\begin{columns}[T]
+	\begin{column}[T]{5cm}
+		\begin{itemize}
+			\item The spatial displacement between fat and water caused by the echo-planar path of the 2D RF excitation pulse is $$\Delta d_{CS}=\frac{N_{blip}f_{CS}T_{fast}}{K_{blip}}$$
+			\item The displacement $\Delta d_{CS}$ between fat and water can be designed so that the excited fat profile is entirely outside the water profile
+		\end{itemize}
+	\end{column}
+	\begin{column}[T]{5cm}
+		\includegraphics[height=6cm]{SpineDWIfig1}
+	\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Refocusing RF Pulse}
+\begin{itemize}
+	\item After 2D RF excitation, a normal $180^{\circ}$ refocusing RF pulse is used, selective in SS direction
+	\item Crusher gradients before and after the pulse are used
+	\item Using 2D RF excitation pulse and $180^{\circ}$ refocusing RF pulse together suppresses signal outside lobes of periodic 2D excitation and fat signal
+\end{itemize}
 \end{frame}
 
 \subsection{Multi Slice Imaging}
 
 \begin{frame}{Multi Slice Imaging}
-
+\begin{itemize}
+	\item Multi slice imaging is not possible for FOV restriction that uses two separate 1D RF pulses, which excites adjacent slices
+	\item 2D echo-planar RF pulses do not excite adjacent slices, making contiguous multi slice imaging possible
+	\item Upper limit on number of simultaneously imaged slices: $$max\left(N_{slices}\right)=\frac{\Delta d_{replicate}}{\Delta d_{SS}}=\frac{N_{blip}}{TBW_{SS}}$$
+	\item With three sagittal slices the whole pulse sequence takes less than 120 ms per slice, allowing multi slice imaging in one cardiac cycle
+\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Methods
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methods}
-\subsection{Phantom Experiments}
-\subsection{In Vivo Imaging}
-\subsection{Image Reconstruction}
+%\section{Methods}
+%\subsection{Phantom Experiments}
+%\subsection{In Vivo Imaging}
+%\subsection{Image Reconstruction}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Results
@@ -125,7 +190,11 @@
 \subsection{Fat Suppression}
 \subsection{Image Reconstruction}
 
-\begin{frame}{test}
+\begin{frame}{Image Reconstruction}
+\begin{itemize}
+	\item Reduced FOV images with double resolution have quartered SNR
+	\item This technique is more robust than multi shot techniques, because no additional navigator echo is needed
+\end{itemize}
 \end{frame}
 \end{document}
 
